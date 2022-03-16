@@ -24,6 +24,6 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
       - name: Build
-        run: dotnet build "CacheService.sln" -c Release --no-restore
+        run: dotnet build "Products.Cli.sln" -c Release --no-restore
       - name: Test
-        run: dotnet test "CacheService.sln" -c Release --no-build
+        run: dotnet test "Products.Cli.sln" -c Release --no-build
