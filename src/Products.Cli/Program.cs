@@ -20,29 +20,11 @@ var servicesProvider = services.AddSingleton<IDeserializer>(CreateYamlDeserializ
                                .AddSingleton<IValidator<Command>, CommandValidator>()
                                .AddSingleton<IImportDataService, ImportDataService>()
                                .AddScoped<IHandler<Command>, Handler>()
+                               .AddScoped<IMainManager, MainManager>()
                                .BuildServiceProvider();
 #endregion
+var arguments = Environment.GetCommandLineArgs();
+await servicesProvider.GetService<IMainManager>()
+                      .ExecuteAsync(arguments[1], arguments[2]);
 
-try
-{
-    var arguments = Environment.GetCommandLineArgs();
-    var dataSource = arguments[1];
-    var inputFilePath = arguments[2];
-    var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", inputFilePath);
-
-    if (!File.Exists(filePath))
-    {
-        Utils.WriteLine("ERROR => Unexpected file path", ConsoleColor.Red);
-        return;
-    }
-
-    var inputData = await File.ReadAllTextAsync(filePath);
-    await servicesProvider.GetService<IHandler<Command>>()
-                          .HandleAsync(new Command(inputData, dataSource.ToUpper()));
-
-    return;
-}
-catch (Exception ex)
-{
-    Utils.WriteLine(ex.Message, ConsoleColor.Red);
-}
+return;
