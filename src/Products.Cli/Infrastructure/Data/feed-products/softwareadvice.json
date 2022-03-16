@@ -1,0 +1,19 @@
+{
+    "products": [
+        {
+            "categories": [
+                "Customer Service",
+                "Call Center"
+            ],
+            "twitter": "@freshdesk",
+            "title": "Freshdesk"
+        },
+        {
+            "categories": [
+                "CRM",
+                "Sales Management"
+            ],
+            "title": "Zoho"
+        }
+    ]
+}
