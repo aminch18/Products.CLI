@@ -4,4 +4,5 @@ public enum Source
 {
     CAPTERRA,
     SOFTWAREADVICE,
+    CSV
 }

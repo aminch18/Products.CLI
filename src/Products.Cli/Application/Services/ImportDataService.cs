@@ -29,6 +29,9 @@ public class ImportDataService : IImportDataService
 
             Source.SOFTWAREADVICE => _strategy[source].Deserialize<List<SoftwareAdviceDTO>>(dataToImport)
                                                       .Select(x => x.ToProductDTO()),
+
+            //here we should use CSVSerializer injecting ICSVSerializer on ctor and adding it in our _strategy dictionary.
+            Source.CSV => throw new NotImplementedException(),
             _ => throw new NotImplementedException()
         };
 
