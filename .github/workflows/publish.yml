@@ -19,7 +19,7 @@ jobs:
       - name: Build
         run: dotnet build src/Products.Cli/Products.Cli.csproj
       - name: Test
-        run: dotnet test tests/Products.Cli/Unit.Tests.csproj
+        run: dotnet test test/Products.Cli/Unit.Tests.csproj
       - name: Create NuGet packages
         run: |
           GITHUB_VERSION="${{ github.ref }}"
