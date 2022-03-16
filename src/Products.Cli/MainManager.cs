@@ -18,11 +18,17 @@ public class MainManager : IMainManager
     {
         try
         {
-            var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", inputFilePath);
+            var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Infrastructure/Data", inputFilePath);
 
             if (!File.Exists(filePath))
             {
                 Utils.WriteLine("ERROR => Unexpected file path", ConsoleColor.Red);
+                return;
+            }
+
+            if (!filePath.Contains(dataSource))
+            {
+                Utils.WriteLine("ERROR => File to import is not related to the data source introduced", ConsoleColor.Red);
                 return;
             }
 
