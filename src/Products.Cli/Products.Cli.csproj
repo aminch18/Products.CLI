@@ -8,6 +8,8 @@
 		<PackAsTool>true</PackAsTool>
 		<ToolCommandName>import</ToolCommandName>
 		<PackageOutputPath>..\..\nupkg</PackageOutputPath>
+		<PackageId>$(AssemblyName).Tool.Ingestion</PackageId>
+		<Product>$(AssemblyName).Tool</Product>
 	</PropertyGroup>
 
 	<ItemGroup>
