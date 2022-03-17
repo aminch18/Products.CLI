@@ -13,7 +13,6 @@
 		<Description>Ingestion CLI tool</Description>
 		<Product>Import.Tool.Ingestion</Product>
 		<PackageIcon>icon.png</PackageIcon>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -36,9 +35,5 @@
 	<ItemGroup>
 		<None Include="..\..\LICENSE" Pack="true" PackagePath="$(PackageLicenseFile)" />
 		<None Include="..\..\icon.png" Pack="true" PackagePath="\" />
-		<None Include="..\..\README.md">
-		  <Pack>True</Pack>
-		  <PackagePath>\</PackagePath>
-		</None>
 	</ItemGroup>
 </Project>

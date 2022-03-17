@@ -2,11 +2,11 @@
   "profiles": {
     "Products.Cli": {
       "commandName": "Project",
-      "commandLineArgs": "capterra feed-products/capterra.yml"
+      "commandLineArgs": "capterra feed-products\capterra.yaml"
     },
     "Profile 2": {
       "commandName": "Project",
-      "commandLineArgs": "softwareadvices feed-products/softwareadvice.json"
+      "commandLineArgs": "softwareadvice feed-products/softwareadvice.json"
     }
   }
 }
