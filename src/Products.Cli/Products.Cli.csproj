@@ -8,7 +8,9 @@
 		<PackAsTool>true</PackAsTool>
 		<ToolCommandName>import</ToolCommandName>
 		<PackageOutputPath>..\..\nupkg</PackageOutputPath>
-		<PackageId>$(AssemblyName).Tool.Ingestion</PackageId>
+		<PackageId>Import.Tool.Ingestion</PackageId>
+		<Authors>Amin Chouaibi El Azaar</Authors>
+		<Description>Ingestion CLI tool</Description>
 		<Product>$(AssemblyName).Tool</Product>
 	</PropertyGroup>
 
@@ -29,4 +31,8 @@
 	  </None>
 	</ItemGroup>
 
+	<ItemGroup>
+		<None Include="..\..\LICENSE" Pack="true" PackagePath="$(PackageLicenseFile)" />
+		<None Include="..\..\icon.png" Pack="true" PackagePath="" />
+	</ItemGroup>
 </Project>

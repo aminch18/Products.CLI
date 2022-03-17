@@ -12,7 +12,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".repo", ".repo", "{663D6B12-816C-4B30-B397-E4E24A659D74}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
+		icon.png = icon.png
 		.github\workflows\integration.yml = .github\workflows\integration.yml
+		LICENSE = LICENSE
 		.github\workflows\publish.yml = .github\workflows\publish.yml
 	EndProjectSection
 EndProject
