@@ -11,7 +11,7 @@
 		<PackageId>Import.Tool.Ingestion</PackageId>
 		<Authors>Amin Chouaibi El Azaar</Authors>
 		<Description>Ingestion CLI tool</Description>
-		<Product>$(AssemblyName).Tool</Product>
+		<Product>Import.Tool.Ingestion</Product>
 	</PropertyGroup>
 
 	<ItemGroup>
