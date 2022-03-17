@@ -53,7 +53,7 @@ jobs:
         run: |
           dotnet nuget push ./nupkg/*.nupkg -k ${{ secrets.NUGET_KEY }} -s https://api.nuget.org/v3/index.json
   release:
-    needs: pack
+    needs: nugets
     runs-on: ubuntu-latest
     name: Upload packages to Release
     steps:
