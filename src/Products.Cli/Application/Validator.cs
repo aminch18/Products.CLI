@@ -11,7 +11,7 @@ public class CommandValidator : AbstractValidator<Command>
     {
         RuleFor(_ => _.InputData).NotEmpty();
         RuleFor(_ => _.InputData).Must(x => IsValidJson(x))
-                                 .When(x => x.DataSourceName == Constants.CAPTERRA_NAME);
+                                 .When(x => x.DataSourceName == Constants.SFTW_ADVICE_NAME);
         RuleFor(_ => _.DataSourceName).NotEmpty();
         RuleFor(_ => _.DataSourceName).Must(x => Constants.AVAILABLE_DATA_SOURCES.Contains(x))
                                       .WithMessage("Unavailable data source");
