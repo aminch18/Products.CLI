@@ -32,8 +32,8 @@ public class HandlerShould
     }
 
     [Theory]
-    [InlineData(InvalidJson, "CAPTERRA")]
-    [InlineData(InvalidYml, "SOFTWAREADVICE")]
+    [InlineData(InvalidYml, "CAPTERRA")]
+    [InlineData(ValidJson, "SOFTWAREADVICE")]
     [InlineData(InvalidJson, "")]
     [InlineData(InvalidYml, "")]
     public void Given_invalid_command_when_handling_then_execution_must_throw_validation_exception(string input, string provider)
@@ -44,8 +44,8 @@ public class HandlerShould
     }
 
     [Theory]
-    [InlineData(ValidJson, "CAPTERRA")]
-    [InlineData(ValidYml, "SOFTWAREADVICE")]
+    [InlineData(ValidYml, "CAPTERRA")]
+    [InlineData(ValidJson, "SOFTWAREADVICE")]
     public void Given_valid_command_when_handling_then_execution_must_be_succesffull(string input, string provider)
     {
         _mockService.Setup(x => x.ImportDataAsync(It.IsAny<string>(), It.IsAny<string>()))
@@ -58,8 +58,8 @@ public class HandlerShould
     }
 
     [Theory]
-    [InlineData(ValidJson, "CAPTERRA")]
-    [InlineData(ValidYml, "SOFTWAREADVICE")]
+    [InlineData(ValidYml, "CAPTERRA")]
+    [InlineData(ValidJson, "SOFTWAREADVICE")]
     public void Given_valid_command_when_handling_then_execution_verify_service_is_called_one_time(string input, string provider)
     {
         _mockService.Setup(x => x.ImportDataAsync(It.IsAny<string>(), It.IsAny<string>()))
@@ -70,6 +70,4 @@ public class HandlerShould
         func.Invoke();
         _mockService.Verify(x => x.ImportDataAsync(It.IsAny<string>(), It.IsAny<string>()), Times.Once);
     }
-
-    
 }
