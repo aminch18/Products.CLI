@@ -1,4 +1,4 @@
-﻿namespace Products.Cli.Application.Models;
+﻿namespace Products.Cli.Application;
 
 public class Command
 {
