@@ -2,12 +2,12 @@
 
 using Newtonsoft.Json.Linq;
 using Products.Cli.Application.Abstractions;
+using Products.Cli.Application.Utils;
 using System.Text;
 using System.Text.Json;
 
 public class JSONSerializer : IJSONSerializer
 {
-    const string ARRAY_NAME = "products";
     public JSONSerializer()
     {
 
@@ -30,7 +30,7 @@ public class JSONSerializer : IJSONSerializer
     private string FixJson(string jsonstring)
     {
         JObject obj = JObject.Parse(jsonstring);
-        var jsonArray = obj[ARRAY_NAME].ToString();
+        var jsonArray = obj[Constants.JSON_ARRAY_KEY].ToString();
         return jsonArray;
     }
 }
