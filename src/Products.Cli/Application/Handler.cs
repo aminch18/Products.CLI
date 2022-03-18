@@ -3,7 +3,6 @@
 using Utils;
 using FluentValidation;
 using Products.Cli.Application.Abstractions;
-using Products.Cli.Application.Models;
 using System.Threading.Tasks;
 
 public class Handler : IHandler<Command>
