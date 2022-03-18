@@ -19,25 +19,6 @@ public class ImportDataService : IImportDataService
         };
     }
 
-    public List<Product> ImportData(string dataProviderName, string dataToImport)
-    {
-        var source = (Source)Enum.Parse(typeof(Source), dataProviderName);
-        var dtos = source switch
-        {
-            Source.CAPTERRA => _strategy[source].Deserialize<List<CapterraDTO>>(dataToImport)
-                                                .Select(x => x.ToProductDTO()),
-
-            Source.SOFTWAREADVICE => _strategy[source].Deserialize<List<SoftwareAdviceDTO>>(dataToImport)
-                                                      .Select(x => x.ToProductDTO()),
-
-            //here we should use CSVSerializer injecting ICSVSerializer on ctor and adding it in our _strategy dictionary.
-            Source.CSV => throw new NotImplementedException(),
-            _ => throw new NotImplementedException()
-        };
-
-        return dtos.Select(x => Product.Build(x.Name, x.Categories, x.Twitter, source)).ToList();
-    }
-
     public async Task<List<Product>> ImportDataAsync(string dataProviderName, string dataToImport)
     {
         var source = (Source)Enum.Parse(typeof(Source), dataProviderName);
@@ -48,7 +29,7 @@ public class ImportDataService : IImportDataService
 
             Source.SOFTWAREADVICE => (await _strategy[source].DeserializeAsync<List<SoftwareAdviceDTO>>(dataToImport))
                                                              .Select(x => x.ToProductDTO()),
-            _ => throw new NotImplementedException()
+            _ => throw new NotImplementedException()    
         };
 
         return dtos.Select(x => Product.Build(x.Name, x.Categories, x.Twitter, source)).ToList();
