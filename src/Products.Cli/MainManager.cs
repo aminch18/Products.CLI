@@ -1,6 +1,9 @@
-﻿using Products.Cli.Application.Abstractions;
-using Products.Cli.Application.Models;
+﻿namespace Products.Cli;
+
+using Products.Cli.Application;
+using Products.Cli.Application.Abstractions;
 using Products.Cli.Application.Utils;
+
 public interface IMainManager
 {
     Task ExecuteAsync(string dataSource, string inputFilePath);
