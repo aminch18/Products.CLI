@@ -1,4 +1,4 @@
-﻿namespace Products.Cli.Services;
+﻿namespace Products.Cli.Services.Serializers;
 
 using Newtonsoft.Json.Linq;
 using Products.Cli.Application.Abstractions;

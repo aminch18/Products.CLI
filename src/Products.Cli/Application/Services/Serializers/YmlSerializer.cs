@@ -1,4 +1,4 @@
-﻿namespace Products.Cli.Services;
+﻿namespace Products.Cli.Services.Serializers;
 
 using YamlDotNet.Serialization;
 using Products.Cli.Application.Abstractions;
