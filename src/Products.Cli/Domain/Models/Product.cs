@@ -21,8 +21,6 @@ public class Product
 
     public string Name { get; private set; }
 
-    public string Category { get; private set; }
-
     public List<string> Categories { get; set; }
 
     public string Twitter { get; private set; }
