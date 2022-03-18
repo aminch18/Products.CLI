@@ -5,7 +5,7 @@ public static class DTOExtensions
     public static ProductDTO ToProductDTO(this CapterraDTO dto)
         => new ProductDTO
         {
-            Categories = dto.Tags.Split(",").ToList(),
+            Categories = dto.Tags?.Split(",").ToList(),
             Name = dto.Name,
             Twitter = dto.Twitter
         };
